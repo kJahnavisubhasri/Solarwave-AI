@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SolarWave | Premium Solar Irradiance Forecasting</title>
-    
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
+
     <!-- Leaflet Map -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -101,8 +104,15 @@
 
         /* Animations */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .animate-fade-in {
@@ -179,14 +189,14 @@
             -webkit-text-fill-color: transparent;
             margin-bottom: 1rem;
             line-height: 1.1;
-            filter: drop-shadow(0 2px 10px rgba(0,0,0,0.2));
+            filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.2));
         }
 
         .light-mode .hero h1 {
             background: linear-gradient(135deg, var(--secondary), var(--primary));
             -webkit-background-clip: text;
             background-clip: text;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
         }
 
         .hero p {
@@ -283,9 +293,20 @@
         }
 
         @keyframes pulse-ring {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 242, 255, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(0, 242, 255, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 242, 255, 0); }
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(0, 242, 255, 0.7);
+            }
+
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(0, 242, 255, 0);
+            }
+
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(0, 242, 255, 0);
+            }
         }
 
         /* Predict Page */
@@ -308,7 +329,8 @@
             gap: 1.5rem;
         }
 
-        input, select {
+        input,
+        select {
             width: 100%;
             padding: 1.25rem;
             background: rgba(255, 255, 255, 0.05);
@@ -320,7 +342,8 @@
             transition: all 0.3s;
         }
 
-        .light-mode input, .light-mode select {
+        .light-mode input,
+        .light-mode select {
             background: rgba(0, 0, 0, 0.05);
         }
 
@@ -329,7 +352,8 @@
             color: var(--text-main);
         }
 
-        input:focus, select:focus {
+        input:focus,
+        select:focus {
             outline: none;
             border-color: var(--primary);
             background: rgba(255, 255, 255, 0.08);
@@ -344,8 +368,15 @@
             margin-bottom: 1rem;
         }
 
-        .badge-label { color: var(--text-dim); font-size: 0.9rem; }
-        .badge-value { font-weight: 700; color: var(--primary); }
+        .badge-label {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        .badge-value {
+            font-weight: 700;
+            color: var(--primary);
+        }
 
         /* Map Section */
         #map {
@@ -411,46 +442,120 @@
             text-align: center;
         }
 
-        .stat-label { font-size: 0.8rem; color: var(--text-dim); margin-bottom: 0.5rem; }
-        .stat-val { font-size: 1.25rem; font-weight: 700; }
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-val {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
 
         /* Mobile styles */
         @media (max-width: 900px) {
-            .predict-container { grid-template-columns: 1fr; }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .result-header { flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; }
-            .main-value { font-size: 3rem; }
-            nav { width: clamp(300px, 95%, 600px); padding: 0.4rem 0.6rem; gap: 4px; justify-content: center; }
-            .nav-link { font-size: 0.85rem; padding: 0.5rem 0.8rem; gap: 4px; }
-            .nav-link i { width: 16px; height: 16px; }
+            .predict-container {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .result-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 1.5rem;
+            }
+
+            .main-value {
+                font-size: 3rem;
+            }
+
+            nav {
+                width: clamp(300px, 95%, 600px);
+                padding: 0.4rem 0.6rem;
+                gap: 4px;
+                justify-content: center;
+            }
+
+            .nav-link {
+                font-size: 0.85rem;
+                padding: 0.5rem 0.8rem;
+                gap: 4px;
+            }
+
+            .nav-link i {
+                width: 16px;
+                height: 16px;
+            }
         }
 
         @media (max-width: 600px) {
-            .page { padding: 1.5rem 1rem; }
-            .hero h1 { font-size: 2.2rem; }
-            .hero p { font-size: 0.95rem; }
-            .locations-grid { grid-template-columns: 1fr; margin-top: 3.5rem; }
-            .stats-grid { grid-template-columns: 1fr; }
-            .stat-item { padding: 1rem; }
-            .glass { padding: 1.25rem !important; }
-            .about-team { grid-template-columns: 1fr; }
-            
-            nav { 
-                top: auto; 
-                bottom: 1.5rem; /* Classic mobile bottom nav bar */
+            .page {
+                padding: 1.5rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            .locations-grid {
+                grid-template-columns: 1fr;
+                margin-top: 3.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-item {
+                padding: 1rem;
+            }
+
+            .glass {
+                padding: 1.25rem !important;
+            }
+
+            .about-team {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                top: auto;
+                bottom: 1.5rem;
+                /* Classic mobile bottom nav bar */
                 border-radius: 20px;
                 width: 90%;
             }
         }
 
         /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--bg-dark); }
-        ::-webkit-scrollbar-thumb { background: var(--glass-border); border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--text-dim); }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
 
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--glass-border);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-dim);
+        }
     </style>
 </head>
+
 <body>
 
     <img id="bg-image" src="" alt="Nature Solar background">
@@ -467,7 +572,8 @@
     <div id="home" class="page active">
         <div class="hero animate-fade-in">
             <h1 id="hero-title">SolarWave AI</h1>
-            <p>Empowering the future with precision solar irradiance forecasting using real-time atmospheric data and advanced machine learning models.</p>
+            <p>Empowering the future with precision solar irradiance forecasting using real-time atmospheric data and
+                advanced machine learning models.</p>
             <div style="display: flex; gap: 1.5rem; justify-content: center;">
                 <button class="btn btn-primary" onclick="showPage('locations')">
                     Launch Dashboard <i data-lucide="arrow-right"></i>
@@ -480,7 +586,11 @@
     <div id="locations" class="page">
         <div style="text-align: center; margin-top: 4rem;">
             <h2 style="font-size: 2.5rem; font-weight: 800;">Real-time Monitoring</h2>
-            <p style="color: var(--text-dim);">Select a location to analyze live solar parameters and forecast irradiance.</p>
+            <p style="color: var(--text-dim);">Select a location to analyze live solar parameters and forecast
+                irradiance.</p>
+            <button class="btn btn-primary animate-fade-in" onclick="useCurrentLocation()" style="margin-top: 1.5rem; background: var(--bg-dark); color: var(--primary); border: 1px solid var(--primary);">
+                <i data-lucide="navigation"></i> Use My Current Location
+            </button>
         </div>
 
         <div class="locations-grid" id="loc-grid">
@@ -499,7 +609,8 @@
     <div id="predict" class="page">
         <div style="width: 100%; margin-top: 4rem;">
             <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                <button class="btn-small" onclick="showPage('locations')" style="background: none; border: 1px solid var(--glass-border); color: white; padding: 0.5rem 1rem; border-radius: 50px; cursor: pointer;">
+                <button class="btn-small" onclick="showPage('locations')"
+                    style="background: none; border: 1px solid var(--glass-border); color: white; padding: 0.5rem 1rem; border-radius: 50px; cursor: pointer;">
                     <i data-lucide="chevron-left" style="vertical-align: middle;"></i> Back to Locations
                 </button>
                 <h2 id="current-loc-name" style="font-size: 2rem;">Nellore Dashboard</h2>
@@ -508,7 +619,7 @@
             <div class="predict-container">
                 <div class="glass form-section">
                     <h3 style="margin-bottom: 2rem;">Forecast Configuration</h3>
-                    
+
                     <label class="badge-label">Select Specific Area</label>
                     <select id="area-select">
                         <option value="">Select Area</option>
@@ -524,8 +635,11 @@
 
                 <div class="glass data-v-section">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <h3 style="display: flex; align-items: center; gap: 10px;"><i data-lucide="radio" class="pulse-icon" style="color:var(--accent)"></i> Live Telemetry</h3>
-                        <span id="coord-display" style="font-family: monospace; color: var(--text-dim); font-size: 0.8rem;">14.44°N, 79.98°E</span>
+                        <h3 style="display: flex; align-items: center; gap: 10px;"><i data-lucide="radio"
+                                class="pulse-icon" style="color:var(--accent)"></i> Live Telemetry</h3>
+                        <span id="coord-display"
+                            style="font-family: monospace; color: var(--text-dim); font-size: 0.8rem;">14.44°N,
+                            79.98°E</span>
                     </div>
 
                     <div id="live-data-stream">
@@ -547,7 +661,8 @@
                         </div>
                     </div>
 
-                    <div style="height: 200px; width: 100%; border-radius: 12px; overflow: hidden; background: rgba(0,0,0,0.2);">
+                    <div
+                        style="height: 200px; width: 100%; border-radius: 12px; overflow: hidden; background: rgba(0,0,0,0.2);">
                         <canvas id="mini-stream-chart"></canvas>
                     </div>
                 </div>
@@ -593,8 +708,10 @@
             </div>
 
             <div style="margin-top: 3rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <button class="btn" style="border: 1px solid var(--glass-border);" onclick="showPage('predict')">Recalculate</button>
-                <button class="btn btn-primary" onclick="downloadPNG()">Download PNG <i data-lucide="download"></i></button>
+                <button class="btn" style="border: 1px solid var(--glass-border);"
+                    onclick="showPage('predict')">Recalculate</button>
+                <button class="btn btn-primary" onclick="downloadPNG()">Download PNG <i
+                        data-lucide="download"></i></button>
                 <button class="btn btn-primary" onclick="showPage('home')">Back to Home</button>
             </div>
         </div>
@@ -604,40 +721,49 @@
     <div id="about" class="page">
         <div style="text-align: center; margin-top: 4rem; max-width: 800px;">
             <h2 style="font-size: 3rem; font-weight: 800; margin-bottom: 1rem;">The Innovation Team</h2>
-            <p style="color: var(--text-dim);">Dedicated students pushing the boundaries of renewable energy technology through data science and engineering.</p>
+            <p style="color: var(--text-dim);">Dedicated students pushing the boundaries of renewable energy technology
+                through data science and engineering.</p>
         </div>
 
         <div class="about-team">
             <div class="glass member-card">
                 <div class="member-icon"><i data-lucide="user"></i></div>
                 <h3 style="font-size: 1.1rem;">B. Vandhana</h3>
-                <p style="color: var(--primary); font-family: monospace; font-size: 0.8rem; margin-top: 0.5rem;">222U1A3704</p>
+                <p style="color: var(--primary); font-family: monospace; font-size: 0.8rem; margin-top: 0.5rem;">
+                    222U1A3704</p>
             </div>
             <div class="glass member-card">
                 <div class="member-icon"><i data-lucide="user"></i></div>
                 <h3 style="font-size: 1.1rem;">K. J. Subhasri</h3>
-                <p style="color: var(--primary); font-family: monospace; font-size: 0.8rem; margin-top: 0.5rem;">222U1A3724</p>
+                <p style="color: var(--primary); font-family: monospace; font-size: 0.8rem; margin-top: 0.5rem;">
+                    222U1A3724</p>
             </div>
             <div class="glass member-card">
                 <div class="member-icon"><i data-lucide="user"></i></div>
                 <h3 style="font-size: 1.1rem;">N. Prasanthi</h3>
-                <p style="color: var(--primary); font-family: monospace; font-size: 0.8rem; margin-top: 0.5rem;">222U1A3737</p>
+                <p style="color: var(--primary); font-family: monospace; font-size: 0.8rem; margin-top: 0.5rem;">
+                    222U1A3737</p>
             </div>
             <div class="glass member-card">
                 <div class="member-icon"><i data-lucide="user"></i></div>
                 <h3 style="font-size: 1.1rem;">P. Saranya</h3>
-                <p style="color: var(--primary); font-family: monospace; font-size: 0.8rem; margin-top: 0.5rem;">222U1A3744</p>
+                <p style="color: var(--primary); font-family: monospace; font-size: 0.8rem; margin-top: 0.5rem;">
+                    222U1A3744</p>
             </div>
             <div class="glass member-card">
                 <div class="member-icon"><i data-lucide="user"></i></div>
                 <h3 style="font-size: 1.1rem;">P. Kavyanjali</h3>
-                <p style="color: var(--primary); font-family: monospace; font-size: 0.8rem; margin-top: 0.5rem;">222U1A3744</p>
+                <p style="color: var(--primary); font-family: monospace; font-size: 0.8rem; margin-top: 0.5rem;">
+                    222U1A3744</p>
             </div>
         </div>
 
         <div class="glass" style="margin-top: 4rem; padding: 3rem; text-align: center; max-width: 800px;">
             <h3>Project Vision</h3>
-            <p style="color: var(--text-dim); margin-top: 1rem; line-height: 1.8;">Our Solar Irradiance Prediction model utilizes real-time atmospheric inputs including Temperature, Humidity, and Pressure to provide high-fidelity forecasts. This enables the optimization of solar grid management and promotes efficient energy consumption patterns for a sustainable future.</p>
+            <p style="color: var(--text-dim); margin-top: 1rem; line-height: 1.8;">Our Solar Irradiance Prediction model
+                utilizes real-time atmospheric inputs including Temperature, Humidity, and Pressure to provide
+                high-fidelity forecasts. This enables the optimization of solar grid management and promotes efficient
+                energy consumption patterns for a sustainable future.</p>
         </div>
     </div>
 
@@ -667,7 +793,7 @@
             lucide.createIcons();
             initLocationGrid();
             initMap();
-            
+
             // Set dynamic background
             const bgImage = document.getElementById('bg-image');
             bgImage.src = 'bg.png';
@@ -699,7 +825,7 @@
                 p.classList.remove('active');
             });
             document.getElementById(pageId).classList.add('active');
-            
+
             // Update Navigation
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('active');
@@ -713,8 +839,8 @@
                 setTimeout(() => map.invalidateSize(), 100);
             }
             if (pageId === 'home') {
-                 // Reset nav active state for home manually since text doesn't always match
-                 document.querySelector('nav div:first-child').classList.add('active');
+                // Reset nav active state for home manually since text doesn't always match
+                document.querySelector('nav div:first-child').classList.add('active');
             }
 
             window.scrollTo(0, 0);
@@ -733,7 +859,7 @@
                     <div class="loc-details">
                         <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
                             <span style="color: var(--text-dim); font-size: 0.8rem;">Current Irradiance</span>
-                            <span style="font-weight: 700; color: var(--primary);" id="cur-ir-rad-${loc.name.replace(/\s+/g,'-')}">740 W/m²</span>
+                            <span style="font-weight: 700; color: var(--primary);" id="cur-ir-rad-${loc.name.replace(/\s+/g, '-')}">740 W/m²</span>
                         </div>
                     </div>
                 `;
@@ -741,7 +867,7 @@
                 grid.appendChild(card);
             });
             lucide.createIcons();
-            
+
             // Fetch random/real-ish values for grid
             locations.forEach(loc => updateGridValue(loc));
         }
@@ -749,11 +875,11 @@
         async function updateGridValue(loc) {
             try {
                 const data = await fetchWeatherData(loc.lat, loc.lng);
-                const valEl = document.getElementById(`cur-ir-rad-${loc.name.replace(/\s+/g,'-')}`);
+                const valEl = document.getElementById(`cur-ir-rad-${loc.name.replace(/\s+/g, '-')}`);
                 if (valEl) {
                     valEl.innerText = `${Math.round(data.current.direct_radiation || 0)} W/m²`;
                 }
-            } catch (e) {}
+            } catch (e) { }
         }
 
         function initMap() {
@@ -771,7 +897,7 @@
                     opacity: 1,
                     fillOpacity: 0.8
                 }).addTo(map);
-                
+
                 marker.bindPopup(`<b>${loc.name}</b><br>Real-time Solar Station`);
                 marker.on('click', () => openPredictor(loc));
             });
@@ -781,7 +907,7 @@
             selectedLocation = loc;
             document.getElementById('current-loc-name').innerText = `📍 ${loc.name} Dashboard`;
             document.getElementById('coord-display').innerText = `${loc.lat.toFixed(2)}°N, ${loc.lng.toFixed(2)}°E`;
-            
+
             // Areas
             const areaSelect = document.getElementById('area-select');
             areaSelect.innerHTML = '<option value="">Select Area</option>';
@@ -808,7 +934,7 @@
         async function updateLiveData(loc) {
             try {
                 const data = await fetchWeatherData(loc.lat, loc.lng);
-                
+
                 document.getElementById('live-temp').innerText = `${data.current.temperature_2m}°C`;
                 document.getElementById('live-hum').innerText = `${data.current.relative_humidity_2m}%`;
                 document.getElementById('live-pres').innerText = `${data.current.surface_pressure} hPa`;
@@ -843,14 +969,56 @@
             }
         }
 
+        async function useCurrentLocation() {
+            if ("geolocation" in navigator) {
+                const btn = document.querySelector('button[onclick="useCurrentLocation()"]');
+                const originalContent = btn.innerHTML;
+                btn.innerHTML = '<i data-lucide="loader" class="spin"></i> Detecting Location...';
+                lucide.createIcons();
+
+                navigator.geolocation.getCurrentPosition(async (position) => {
+                    const { latitude, longitude } = position.coords;
+                    const loc = {
+                        name: "Current Location",
+                        lat: latitude,
+                        lng: longitude,
+                        areas: ["Precise GPS Location"]
+                    };
+                    
+                    // Center map on user
+                    if (map) {
+                        map.setView([latitude, longitude], 12);
+                        L.circleMarker([latitude, longitude], {
+                            radius: 10,
+                            fillColor: "#00F2FF",
+                            color: "#fff",
+                            weight: 2,
+                            opacity: 1,
+                            fillOpacity: 1
+                        }).addTo(map).bindPopup("<b>You are here</b>").openPopup();
+                    }
+
+                    await openPredictor(loc);
+                    btn.innerHTML = originalContent;
+                    lucide.createIcons();
+                }, (error) => {
+                    alert("Location access denied or unavailable. Please select from the list below.");
+                    btn.innerHTML = originalContent;
+                    lucide.createIcons();
+                });
+            } else {
+                alert("Geolocation is not supported by your browser.");
+            }
+        }
+
         function initMiniChart(data) {
             const ctx = document.getElementById('mini-stream-chart').getContext('2d');
             if (miniChart) miniChart.destroy();
-            
+
             miniChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: Array.from({length: 24}, (_, i) => `${i}:00`),
+                    labels: Array.from({ length: 24 }, (_, i) => `${i}:00`),
                     datasets: [{
                         label: 'Sol. Rad.',
                         data: data,
@@ -866,7 +1034,7 @@
                     responsive: true,
                     maintainAspectRatio: false,
                     plugins: { legend: { display: false } },
-                    scales: { 
+                    scales: {
                         x: { display: false },
                         y: { display: false }
                     }
@@ -884,7 +1052,7 @@
             const originalText = btn.innerHTML;
             btn.innerHTML = '<i data-lucide="loader" class="spin"></i> Analyzing...';
             lucide.createIcons();
-            
+
             try {
                 const data = await fetchWeatherData(selectedLocation.lat, selectedLocation.lng);
                 await new Promise(r => setTimeout(r, 1500)); // Fake processing delay
@@ -892,7 +1060,7 @@
                 // Get value from API hourly data if available, else simulate based on current
                 let irradiance = data.hourly.direct_radiation[hour] || 0;
                 if (irradiance < 5 && hour > 6 && hour < 18) irradiance = Math.random() * (800 - 500) + 500; // Fallback for night/error
-                
+
                 displayResult(selectedLocation, area, timeStr, irradiance, data);
             } catch (e) {
                 alert("Error connecting to Atmospheric API. Using local model...");
@@ -907,7 +1075,7 @@
             document.getElementById('res-location').innerText = `${loc.name}, ${area}`;
             document.getElementById('res-time').innerText = `Target Time: ${time}`;
             document.getElementById('res-value').innerHTML = `${val.toFixed(1)} <small style="font-size: 1.5rem;">W/m²</small>`;
-            
+
             if (fullData) {
                 document.getElementById('res-cloud').innerText = `${fullData.current.cloud_cover}%`;
                 document.getElementById('res-uv').innerText = fullData.current.uv_index;
@@ -924,7 +1092,7 @@
             forecastChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: Array.from({length: 24}, (_, i) => `${i}:00`),
+                    labels: Array.from({ length: 24 }, (_, i) => `${i}:00`),
                     datasets: [{
                         label: 'Irradiance (W/m²)',
                         data: data,
@@ -937,7 +1105,7 @@
                         fill: 'start',
                         backgroundColor: (context) => {
                             const chart = context.chart;
-                            const {ctx, chartArea} = chart;
+                            const { ctx, chartArea } = chart;
                             if (!chartArea) return null;
                             const gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top);
                             gradient.addColorStop(1, 'rgba(255, 215, 0, 0.4)');
@@ -979,9 +1147,13 @@
         .spin {
             animation: spin 1s linear infinite;
         }
+
         @keyframes spin {
-            100% { transform: rotate(360deg); }
+            100% {
+                transform: rotate(360deg);
+            }
         }
     </style>
 </body>
+
 </html>
