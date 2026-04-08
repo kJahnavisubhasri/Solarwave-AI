@@ -973,16 +973,16 @@
             if ("geolocation" in navigator) {
                 const btn = document.querySelector('button[onclick="useCurrentLocation()"]');
                 const originalContent = btn.innerHTML;
-                btn.innerHTML = '<i data-lucide="loader" class="spin"></i> Detecting Location...';
+                btn.innerHTML = '<i data-lucide="loader" class="spin"></i> Automated Flow...';
                 lucide.createIcons();
 
                 navigator.geolocation.getCurrentPosition(async (position) => {
                     const { latitude, longitude } = position.coords;
                     const loc = {
-                        name: "Current Location",
+                        name: "Your Saved Location",
                         lat: latitude,
                         lng: longitude,
-                        areas: ["Precise GPS Location"]
+                        areas: ["Detected Area"]
                     };
                     
                     // Center map on user
@@ -995,12 +995,29 @@
                             weight: 2,
                             opacity: 1,
                             fillOpacity: 1
-                        }).addTo(map).bindPopup("<b>You are here</b>").openPopup();
+                        }).addTo(map).bindPopup("<b>Detected User Position</b>").openPopup();
                     }
 
+                    // Set time automatically to now
+                    const now = new Date();
+                    const currentTime = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+                    document.getElementById('target-time').value = currentTime;
+
                     await openPredictor(loc);
-                    btn.innerHTML = originalContent;
-                    lucide.createIcons();
+                    
+                    // Auto-select the first area
+                    const areaSelect = document.getElementById('area-select');
+                    if (areaSelect.options.length > 1) {
+                        areaSelect.selectedIndex = 1; 
+                    }
+
+                    // Delay slightly for map animation then trigger results
+                    setTimeout(() => {
+                        runPrediction();
+                        btn.innerHTML = originalContent;
+                        lucide.createIcons();
+                    }, 800);
+
                 }, (error) => {
                     alert("Location access denied or unavailable. Please select from the list below.");
                     btn.innerHTML = originalContent;
